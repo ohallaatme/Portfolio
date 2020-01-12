@@ -20,6 +20,8 @@ from django.conf import settings
 # static is an app included in our settings.py apps that allows us to serve images, files, videos
 # Django includes it by default in our INSTALLED_APPS
 from django.conf.urls.static import static
+# import views from jobs generally so we can specify which view for multiple views
+import jobs.views
 
 """
 
@@ -32,4 +34,7 @@ the +static code after the list of paths is so we can re-route the user to our m
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # homepage, putting homepage view inside of Job app in project
+    # jobs already has a views.py we can write a function to return with
+    path('', jobs.views.home, name='home')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
