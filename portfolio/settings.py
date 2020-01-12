@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # jobs is the directory, apps is the file, JobsConfig is the class
+    'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+""" Tell Django project where to save media files """
+
+# MEDIA_ROOT is where media files should be saved
+# Anytime someone saves media it will go to a new media folder as specified below
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# MEDIA_URL means when someone is trying to go access an image where can they do that
+# We go to media/images
+# images is specified in the apps.py JobsConfig class
+MEDIA_URL = '/media/'

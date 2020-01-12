@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# this line of code is essentially importing our settings.py file from our portfolio directory
+from django.conf import settings
+# static is an app included in our settings.py apps that allows us to serve images, files, videos
+# Django includes it by default in our INSTALLED_APPS
+from django.conf.urls.static import static
+
+"""
+
+the +static code after the list of paths is so we can re-route the user to our media files
+
+ - document_root=settings.MEDIA_ROOT = where you should look for the information
+ - settings.MEDIA_URL = the url path that should be used for the information
+
+"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
