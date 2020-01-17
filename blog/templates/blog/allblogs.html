@@ -55,53 +55,25 @@
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="#">LinkedIn</a>
       <a class="nav-item nav-link" href="#">Resume</a>
-      <a class="nav-item nav-link" href="#">Blog</a>
+        <!-- 1.17.2020 changed by adding 'active' to select Blog while we are on the page -->
+      <a class="nav-item nav-link active" href="#">Blog</a>
     </div>
   </div>
 </nav>
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
+    <!-- wrap everything in a container so it isn't edge to edge -->
     <div class="container">
-      <h1>Hi, I'm KT</h1>
-      <p class="lead text-muted">What's new, Buenos Aires?</p>
-      <p>
-          <!-- mailto:me@me.com creates email hyperlink -->
-        <a href="mailto:kohalloran1215@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-    </div>
-  </section>
-<!-- This is where the job cards start -->
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
+        <!-- center text for header, top padding of 3 -->
+        <h1 class="text-center pt-3">Blog</h1>
+        <!-- adding a few lines for distance -->
+        <br />
+        <br />
+        <h2>Latest Posts</h2>
 
-      <!--
-      Start of one job box, this block is the code we want to loop through for
-      every job
-
-      {% for job in jobs.all %} does a for loop through all the jobs and each time it
-      goes through it
-       -->
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <!-- svg tag included is for SVG graphics,
-            deleting entire tag to be an image but check in venv! -->
-            <img class="card-img-top" src="{{ job.image.url}}" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        <!-- end of one job box -->
-        </div>
     </div>
-  </div>
-</div>
+
 
 </main>
 <!--
