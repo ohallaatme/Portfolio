@@ -71,10 +71,21 @@
         <br />
         <br />
         <h2>Latest Posts</h2>
-
+        <hr />
+        {% for blog in blogs.all %}
+        <!-- surround by a tag to link to location -->
+        <a href=""></a><h3>{{ blog.title }}</h3></a>
+        {{ blog.pub_date_pretty }}
+        <br />
+        <!--
+        Scaling specified with height and width, img-fluid passed
+        as a class from bootstrap makes sure images aren't bent out of
+        proportion
+         -->
+        <img class="img-fluid" src="{{ blog.image.url }}" height=200 width=200 />
+        <p>{{ blog.summary }}</p>
+        {% endfor %}
     </div>
-
-
 </main>
 <!--
 Footer example tailored to be copyright for current year, content in curly braces is

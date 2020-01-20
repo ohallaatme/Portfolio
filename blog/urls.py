@@ -13,4 +13,7 @@ the +static code after the list of paths is so we can re-route the user to our m
 
 urlpatterns = [
     path('', views.allblogs, name='allblogs'),
+    # code below says look for an int after the /blog and we are going
+    # to save it as blog_id
+    path('<int:blog_id/>', views.detail, name="detail"),
 ]
