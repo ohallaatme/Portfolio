@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+# adding 'include' to import to route user to blog pages
+from django.urls import path, include
 # this line of code is essentially importing our settings.py file from our portfolio directory
 from django.conf import settings
 # static is an app included in our settings.py apps that allows us to serve images, files, videos
@@ -36,5 +37,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # homepage, putting homepage view inside of Job app in project
     # jobs already has a views.py we can write a function to return with
-    path('', jobs.views.home, name='home')
+    path('', jobs.views.home, name='home'),
+    # path to send along to blog app
+    path('blog/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
