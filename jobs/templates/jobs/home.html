@@ -44,9 +44,9 @@
 
       </head>
   <body>
-    <header>
+  <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Katie O'Halloran</a>
+  <a class="navbar-brand" href="{% url 'home'%}">Katie O'Halloran</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -54,9 +54,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <!-- ml auto moves content over to the right automatically -->
     <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link" href="#">LinkedIn</a>
+      <a class="nav-item nav-link" href="https://www.linkedin.com/in/katherine-o-halloran-23bb7181/">LinkedIn</a>
       <a class="nav-item nav-link" href="{%static 'Katherine_OHalloran_Resume_Final.pdf' %}">Resume</a>
-      <a class="nav-item nav-link" href="#">Blog</a>
+      <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
     </div>
   </div>
 </nav>
