@@ -128,6 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# specify where our static folders are
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+# add static as the argument as it should be base path / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# could change this to anything, it's just the path that is going to appear
 STATIC_URL = '/static/'
 
 """ Tell Django project where to save media files """

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,7 +55,7 @@
       <!-- ml auto moves content over to the right automatically -->
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="#">LinkedIn</a>
-      <a class="nav-item nav-link" href="#">Resume</a>
+      <a class="nav-item nav-link" href="{%static 'Katherine_OHalloran_Resume_Final.pdf' %}">Resume</a>
       <a class="nav-item nav-link" href="#">Blog</a>
     </div>
   </div>
